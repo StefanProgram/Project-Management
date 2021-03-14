@@ -7,7 +7,7 @@
 </head>
 <body>
 <p>Add Project</p>
-<form action="#" th:action="@{/project/add}" th:object="${new}" method="post">
+<form action="#" th:action="@{/project/add}" th:object="${newProject}" method="post">
     <table border="1">
         <tr>
             <td><label> Name</label></td>
@@ -18,7 +18,7 @@
             <td><input type="text" th:field="*{description}" /></td>
         </tr>
         <tr>
-            <td><label>Description:</label></td>
+            <td><label>Administrator:</label></td>
             <td><input type="text" th:field="*{administrator}" /></td>
         </tr>
         <tr>
