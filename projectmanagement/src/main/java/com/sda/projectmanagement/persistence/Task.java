@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String Id;
+    private Integer Id;
     private String name;
     private String description;
     private String sprint;
@@ -19,13 +19,6 @@ public class Task {
     private String progress;
     private String assignedPerson;
 
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
-    }
 
     public String getName() {
         return name;
@@ -91,3 +84,4 @@ public class Task {
         this.assignedPerson = assignedPerson;
     }
 }
+
