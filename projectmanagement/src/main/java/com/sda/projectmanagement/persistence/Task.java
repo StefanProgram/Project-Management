@@ -9,6 +9,7 @@ import javax.persistence.Id;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer Id;
     private String name;
     private String description;
     private String sprint;
