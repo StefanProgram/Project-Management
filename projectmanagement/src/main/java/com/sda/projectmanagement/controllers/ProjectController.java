@@ -1,7 +1,8 @@
 package com.sda.projectmanagement.controllers;
 
-import com.sda.projectmanagement.persistence.ProjectEntity;
+import com.sda.projectmanagement.persistence.ProjectsEntity;
 import com.sda.projectmanagement.service.ProjectManagementService;
+import com.sda.projectmanagement.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,14 +12,27 @@ import java.util.List;
 
 @Controller
 public class ProjectController {
-
     @Autowired
     private ProjectManagementService projectManagementService;
 
     @GetMapping(path = "getProjectManagement")
     public String getProjectManagement(Model model){
-        List<ProjectEntity> projectEntityList = projectManagementService.getAllProjects();
+        List<ProjectsEntity> projectEntityList = projectManagementService.getAllProjects();
         model.addAttribute("ProjectManagement",projectEntityList);
         return "ProjectManagement";
     }
+
+    @Autowired
+    private ProjectService projectService;
+
+    @GetMapping(path = "getProjects")
+    public String getProjects(Model model) {
+        List<ProjectsEntity> projectList = projectService.getAllProjects();
+        model.addAttribute("projects",projectList );
+        return "projects";
+    }
+
+
+
+
 }

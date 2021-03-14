@@ -3,21 +3,21 @@ package com.sda.projectmanagement.persistence;
 import javax.persistence.*;
 
 @Entity
-@Table(name="project")
-public class ProjectEntity {
+@Table(name = "project")
+public class ProjectsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer projectId;
     private String name;
     private String description;
     private String administrator;
 
-    public Integer getId() {
-        return Id;
+    public Integer getProjectId() {
+        return projectId;
     }
 
-    public void setId(Integer id) {
-        Id = id;
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
     }
 
     public String getName() {
@@ -47,7 +47,7 @@ public class ProjectEntity {
     @Override
     public String toString() {
         return "ProjectEntity{" +
-                "Id=" + Id +
+                "projectId=" + projectId +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", administrator='" + administrator + '\'' +

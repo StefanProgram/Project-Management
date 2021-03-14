@@ -3,23 +3,22 @@ package com.sda.projectmanagement.persistence;
 import javax.persistence.*;
 
 @Entity
-@Table(name="user")
-public class UserEntity {
-
+@Table(name = "user")
+public class UsersEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer userId;
     private String login;
     private String password;
     private String email;
     private String displayedName;
 
-    public Integer getId() {
-        return id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getLogin() {
@@ -57,7 +56,7 @@ public class UserEntity {
     @Override
     public String toString() {
         return "UserEntity{" +
-                "id=" + id +
+                "userId=" + userId +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
