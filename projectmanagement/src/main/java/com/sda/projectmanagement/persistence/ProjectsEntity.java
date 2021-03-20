@@ -10,7 +10,10 @@ public class ProjectsEntity {
     private Integer projectId;
     private String name;
     private String description;
-    private String administrator;
+
+    @OneToOne
+    @JoinColumn(name = "login")
+    private UsersEntity administrator;
 
     public Integer getProjectId() {
         return projectId;
@@ -36,21 +39,21 @@ public class ProjectsEntity {
         this.description = description;
     }
 
-    public String getAdministrator() {
+    public UsersEntity getAdministrator() {
         return administrator;
     }
 
-    public void setAdministrator(String administrator) {
+    public void setAdministrator(UsersEntity administrator) {
         this.administrator = administrator;
     }
 
     @Override
     public String toString() {
-        return "ProjectEntity{" +
+        return "ProjectsEntity{" +
                 "projectId=" + projectId +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", administrator='" + administrator + '\'' +
+                ", administrator=" + administrator +
                 '}';
     }
 }

@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"><head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<p>Add Project</p>
-<form action="#" th:action="@{/project/add}" th:object="${newProject}" method="post">
+<p>Edit project</p>
+<form action="#" th:action="@{/project/edit}" th:object="${projectToBeEdited}" method="post">
     <table border="1">
+        <tr>
+            <td><label> Id</label>
+            </td>
+            <td ><input readonly type="text" th:field="*{id}" /></td>
+        </tr>
         <tr>
             <td><label> Name</label></td>
             <td><input type="text" th:field="*{name}" /></td>
@@ -17,11 +21,11 @@
             <td><input type="text" th:field="*{description}" /></td>
         </tr>
         <tr>
-            <td><label>Administrator:</label></td>
+            <td><label>Description:</label></td>
             <td><input type="text" th:field="*{administrator}" /></td>
         </tr>
         <tr>
-            <td><input type="submit" value="Submit" /></td>
+            <td><input type="submit" value="Edit" /></td>
         </tr>
     </table>
 </form>

@@ -13,6 +13,17 @@ public class UsersEntity {
     private String email;
     private String displayedName;
 
+    @OneToOne
+    private ProjectsEntity projectsEntity;
+
+    public ProjectsEntity getProjectsEntity() {
+        return projectsEntity;
+    }
+
+    public void setProjectsEntity(ProjectsEntity projectsEntity) {
+        this.projectsEntity = projectsEntity;
+    }
+
     public Integer getUserId() {
         return userId;
     }
@@ -55,12 +66,13 @@ public class UsersEntity {
 
     @Override
     public String toString() {
-        return "UserEntity{" +
+        return "UsersEntity{" +
                 "userId=" + userId +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", displayedName='" + displayedName + '\'' +
+                ", projectsEntity=" + projectsEntity +
                 '}';
     }
 }

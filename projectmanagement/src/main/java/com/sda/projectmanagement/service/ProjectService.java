@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProjectService {
@@ -33,8 +34,13 @@ public class ProjectService {
         projectRepository.save(editedProject);
     }
 
-    public void deleteProject(ProjectsEntity projectsEntity) {
-        projectRepository.deleteById(projectsEntity.getProjectId());
+    public void deleteProject(Integer id) {
+        projectRepository.deleteById(id);
+    }
+    public ProjectsEntity getProject(Integer id) {
+        Optional<ProjectsEntity> projectsEntityOptional =  projectRepository.findById(id);
+        ProjectsEntity projectsEntity = projectsEntityOptional.get();
+        return projectsEntity;
     }
 
 

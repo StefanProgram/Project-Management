@@ -1,39 +1,37 @@
 package com.sda.projectmanagement.service;
 
 import com.sda.projectmanagement.persistence.ParticipationInProjectEntity;
-import com.sda.projectmanagement.persistence.UsersEntity;
-import com.sda.projectmanagement.repositories.ParticipationInProjectRepository;
-import com.sda.projectmanagement.repositories.UserRepository;
+import com.sda.projectmanagement.repositories.ParticipationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class ParticipationInProjectService {
+public class ParticipationService {
     @Autowired
-    private ParticipationInProjectRepository participationInProjectRepository;
+    private ParticipationRepository participationRepository;
 
-    public ParticipationInProjectRepository getParticipationInProjectRepository() {
-        return participationInProjectRepository;
+    public ParticipationRepository getParticipationInProjectRepository() {
+        return participationRepository;
     }
 
-    public void setParticipationInProjectRepository(ParticipationInProjectRepository participationRepository) {
-        this.participationInProjectRepository = participationRepository;
+    public void setParticipationInProjectRepository(ParticipationRepository participationRepository) {
+        this.participationRepository = participationRepository;
     }
 
     public void addParticipation(ParticipationInProjectEntity newParticipation) {
-        participationInProjectRepository.save(newParticipation);
+        participationRepository.save(newParticipation);
     }
 
     public List<ParticipationInProjectEntity> getAllParticipations() {
-        return participationInProjectRepository.findAll();
+        return participationRepository.findAll();
     }
 
     public void editParticipation(ParticipationInProjectEntity editedParticipation) {
-        participationInProjectRepository.save(editedParticipation);
+        participationRepository.save(editedParticipation);
     }
 
     public void deleteParticipation(ParticipationInProjectEntity participationEntity) {
-        participationInProjectRepository.deleteById(participationEntity.getParticipationId());
+        participationRepository.deleteById(participationEntity.getParticipationId());
     }
 }
