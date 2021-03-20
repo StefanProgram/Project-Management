@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html   xmlns:th="http://www.thymeleaf.org"
-        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" >
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>My Projects</title>
 </head>
 <body>
 
-<li th:each="project: ${project}">
+<li th:each="project: ${projects}">
     <p th:text="${project.name}"/>
+    <p th:text="${project.description}"/>
+    <p th:text="${project.administrator}"/>
+    <a th:href="@{/edit-project/{id}(id = ${project.id})}"><button>Edit</button></a>
+    <a th:href="@{/delete-project/{id}(id = ${project.id})}"><button>Delete</button></a>
 </li>
 
 </body>

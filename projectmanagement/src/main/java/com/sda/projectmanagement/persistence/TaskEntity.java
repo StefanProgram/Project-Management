@@ -19,6 +19,7 @@ public class TaskEntity {
     private String progress;
     private String assignedPerson;
 
+
     public Integer getId() {
         return Id;
     }
@@ -26,6 +27,8 @@ public class TaskEntity {
     public void setId(Integer id) {
         Id = id;
     }
+
+
 
     public String getName() {
         return name;
