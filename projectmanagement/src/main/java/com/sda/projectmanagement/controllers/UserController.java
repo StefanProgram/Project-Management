@@ -25,14 +25,14 @@ public class UserController {
     }
 
     @GetMapping(path = "add-user")
-    public String addBookPage(Model model) {
-        model.addAttribute("newProject", new UsersEntity());
-        return "add-project";
+    public String addUserPage(Model model) {
+        model.addAttribute("newUser", new UsersEntity());
+        return "add-user";
     }
 
     @PostMapping(path = "user/add")
-    public String addBook(@ModelAttribute UsersEntity newProject) {
-        userService.addUser(newProject);
-        return "redirect:/getProjects";
+    public String addUser(@ModelAttribute UsersEntity newUser) {
+        userService.addUser(newUser);
+        return "redirect:/getUsers";
     }
 }

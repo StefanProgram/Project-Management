@@ -7,9 +7,9 @@
 <body>
 
 <li th:each="project: ${projects}">
-    <p th:text="${project.name}"/>
-    <p th:text="${project.description}"/>
-    <p th:text="${project.administrator}"/>
+    <p th:text="'Project:' + ${project.name}"/>
+    <p th:text="'Description' + ${project.description}"/>
+    <p th:text="'Administrator' + ${project.administrator}"/>
     <a th:href="@{/edit-project/{id}(id = ${project.id})}"><button>Edit</button></a>
     <a th:href="@{/delete-project/{id}(id = ${project.id})}"><button>Delete</button></a>
 </li>

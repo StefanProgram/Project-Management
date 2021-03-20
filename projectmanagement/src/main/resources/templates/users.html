@@ -6,7 +6,7 @@
 </head>
 <body>
 <li th:each="user: ${users}">
-    <p th:text="${user.displayedName}"/>
+    <p th:text="'User:' + "${user.displayedName}"/>
 </li>
 </body>
 </html>
