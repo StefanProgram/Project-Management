@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html   xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" >
+<head>
+    <meta charset="UTF-8">
+    <title>My Projects</title>
+</head>
+<body>
+
+<li th:each="s: ${sprint}">
+    <p th:text="${s.name}"/>
+</li>
+
+</body>
+</html>

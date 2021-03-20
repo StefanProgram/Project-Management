@@ -21,8 +21,5 @@ public class UserController {
         return "users";
     }
 
-//    @GetMapping(path="add-user")
-//    public  String addUserPage(Model model){
-//        return
-//    }
+
 }
