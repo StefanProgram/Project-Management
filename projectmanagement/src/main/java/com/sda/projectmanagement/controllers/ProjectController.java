@@ -1,7 +1,6 @@
 package com.sda.projectmanagement.controllers;
 
 import com.sda.projectmanagement.persistence.ProjectsEntity;
-import com.sda.projectmanagement.service.ProjectManagementService;
 import com.sda.projectmanagement.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

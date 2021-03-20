@@ -24,6 +24,9 @@ public class UserController {
         return "users";
     }
 
+
+
+
     @GetMapping(path = "add-user")
     public String addUserPage(Model model) {
         model.addAttribute("newUser", new UsersEntity());
@@ -35,4 +38,5 @@ public class UserController {
         userService.addUser(newUser);
         return "redirect:/getUsers";
     }
+
 }

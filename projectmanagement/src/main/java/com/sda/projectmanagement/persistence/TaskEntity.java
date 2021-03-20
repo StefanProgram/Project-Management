@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Task {
+public class TaskEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
@@ -18,6 +18,16 @@ public class Task {
     private String inProgress;
     private String progress;
     private String assignedPerson;
+
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
+
 
 
     public String getName() {
