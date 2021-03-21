@@ -28,11 +28,11 @@
     <a th:href="@{/getParticipation}">
         <button type="button" class="btn btn-primary">Assign Project</button>
     </a>
-    <h1>Hello, world!</h1>
+    <h1>Participations</h1>
     <li th:each="participation: ${participations}">
         <p th:text="'Project name : ' + ${participation.projectsEntity.name}"/>
-    <li th:each="user: ${users}">
-        <p th:text="'Participating users : ' + ${user.displayedName}"/>
+    <li th:each="participation: ${participations}">
+        <p th:text="'Participating users : ' + ${participation.usersEntity.displayedName}"/>
     </li>
     <a th:href="@{/edit-participation/{id}(id = ${participation.participationId})}">
         <button type="button" class="btn btn-primary">Edit</button>
