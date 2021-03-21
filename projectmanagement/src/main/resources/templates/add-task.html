@@ -6,20 +6,44 @@
 </head>
 <body>
 <p>Add Task</p>
-<form action="#" th:action="@{/project/add}" th:object="${newTask}" method="post">
+<form action="#" th:action="@{/sprint/add}" th:object="${newTask}" method="post">
     <table border="1">
         <tr>
-            <td><label> Name</label></td>
+            <td><label> Id </label></td>
+            <td><input type="text" th:field="*{id}" /></td>
+        </tr>
+        <tr>
+            <td><label>Name:</label></td>
             <td><input type="text" th:field="*{name}" /></td>
         </tr>
         <tr>
             <td><label>Description:</label></td>
             <td><input type="text" th:field="*{description}" /></td>
         </tr>
-        <!--        <tr>-->
-        <!--            <td><label>Administrator:</label></td>-->
-        <!--            <td><input type="text" th:field="*{administrator}" /></td>-->
-        <!--        </tr>-->
+        <tr>
+            <td><label>Sprint:</label></td>
+            <td><input type="text" th:field="*{sprint}" /></td>
+        </tr>
+        <tr>
+            <td><label>Weight:</label></td>
+            <td><input type="text" th:field="*{weight}" /></td>
+        </tr>
+        <tr>
+            <td><label>StoryPoints:</label></td>
+            <td><input type="text" th:field="*{storyPoints}" /></td>
+        </tr>
+        <tr>
+            <td><label>InProgress:</label></td>
+            <td><input type="text" th:field="*{inProgress}" /></td>
+        </tr>
+        <tr>
+            <td><label>Progress:</label></td>
+            <td><input type="text" th:field="*{progress}" /></td>
+        </tr>
+        <tr>
+            <td><label>AssignedPerson:</label></td>
+            <td><input type="text" th:field="*{assignedPerson}" /></td>
+        </tr>
         <tr>
             <td><input type="submit" value="Submit" /></td>
         </tr>

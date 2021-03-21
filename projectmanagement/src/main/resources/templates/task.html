@@ -32,6 +32,7 @@
         <p th:text="'T.weight: ' + ${t.weight}"/>
         <p th:text="'T.storyPoints: ' + ${t.storyPoints}"/>
         <p th:text="'T.inProgress: ' + ${t.inProgress}"/>
+        <p th:text="'T.progress: ' + ${t.progress}"/>
         <p th:text="'T.assignedPerson: ' + ${t.assignedPerson}"/>
         <a th:href="@{/edit-project/{id}(id = ${project.projectId})}"><button type="button" class="btn btn-primary">Edit</button></a>
         <a th:href="@{/delete-project/{id}(id = ${project.projectId})}"><button type="button" class="btn btn-primary">Delete</button></a>
