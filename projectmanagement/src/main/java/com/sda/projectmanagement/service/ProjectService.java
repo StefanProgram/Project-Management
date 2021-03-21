@@ -37,8 +37,9 @@ public class ProjectService {
     public void deleteProject(Integer id) {
         projectRepository.deleteById(id);
     }
+
     public ProjectsEntity getProject(Integer id) {
-        Optional<ProjectsEntity> projectsEntityOptional =  projectRepository.findById(id);
+        Optional<ProjectsEntity> projectsEntityOptional = projectRepository.findById(id);
         ProjectsEntity projectsEntity = projectsEntityOptional.get();
         return projectsEntity;
     }

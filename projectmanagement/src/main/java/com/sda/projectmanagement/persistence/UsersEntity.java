@@ -16,14 +16,6 @@ public class UsersEntity {
     @OneToOne
     private ProjectsEntity projectsEntity;
 
-    public ProjectsEntity getProjectsEntity() {
-        return projectsEntity;
-    }
-
-    public void setProjectsEntity(ProjectsEntity projectsEntity) {
-        this.projectsEntity = projectsEntity;
-    }
-
     public Integer getUserId() {
         return userId;
     }
@@ -62,6 +54,14 @@ public class UsersEntity {
 
     public void setDisplayedName(String displayedName) {
         this.displayedName = displayedName;
+    }
+
+    public ProjectsEntity getProjectsEntity() {
+        return projectsEntity;
+    }
+
+    public void setProjectsEntity(ProjectsEntity projectsEntity) {
+        this.projectsEntity = projectsEntity;
     }
 
     @Override

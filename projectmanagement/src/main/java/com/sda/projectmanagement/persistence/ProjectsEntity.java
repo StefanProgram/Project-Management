@@ -12,7 +12,7 @@ public class ProjectsEntity {
     private String description;
 
     @OneToOne
-    @JoinColumn(name = "login")
+    @JoinColumn(name = "displayedName")
     private UsersEntity administrator;
 
     public Integer getProjectId() {
