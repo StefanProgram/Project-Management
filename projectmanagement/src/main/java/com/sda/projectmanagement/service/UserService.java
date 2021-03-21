@@ -1,11 +1,14 @@
 package com.sda.projectmanagement.service;
 
+import com.sda.projectmanagement.persistence.ProjectsEntity;
 import com.sda.projectmanagement.persistence.UsersEntity;
 import com.sda.projectmanagement.repositories.UserRepository;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -33,7 +36,12 @@ public class UserService {
         userRepository.save(editedUser);
     }
 
-    public void deleteUser(UsersEntity projectEntity) {
-        userRepository.deleteById(projectEntity.getUserId());
+    public void deleteUser(Integer id) {
+        userRepository.deleteById(id);
+    }
+    public UsersEntity getUser(Integer id) {
+        Optional<UsersEntity> usersEntityOptional =  userRepository.findById(id);
+        UsersEntity usersEntity = usersEntityOptional.get();
+        return usersEntity;
     }
 }
