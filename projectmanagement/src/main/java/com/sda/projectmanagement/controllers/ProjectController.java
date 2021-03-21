@@ -1,7 +1,9 @@
 package com.sda.projectmanagement.controllers;
 
 import com.sda.projectmanagement.persistence.ProjectsEntity;
+import com.sda.projectmanagement.persistence.UsersEntity;
 import com.sda.projectmanagement.service.ProjectService;
+import com.sda.projectmanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,8 @@ import java.util.List;
 public class ProjectController {
     @Autowired
     private ProjectService projectService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping(path = "getProjects")
     public String getProjects(Model model) {
@@ -27,6 +31,8 @@ public class ProjectController {
     @GetMapping(path = "add-project")
     public String addProjectPage(Model model) {
         model.addAttribute("newProject", new ProjectsEntity());
+        List<UsersEntity> usersEntity = userService.getAllUsers();
+        model.addAttribute("users", usersEntity);
         return "add-project";
     }
 
@@ -40,6 +46,8 @@ public class ProjectController {
     public String editProjectPage(Model model, @PathVariable("id") Integer id) {
         ProjectsEntity projectsEntity = projectService.getProject(id);
         model.addAttribute("projectToBeEdited", projectsEntity);
+        List<UsersEntity> usersEntity = userService.getAllUsers();
+        model.addAttribute("users", usersEntity);
         return "edit-project";
     }
 

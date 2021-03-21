@@ -13,7 +13,7 @@ public class UsersEntity {
     private String email;
     private String displayedName;
 
-    @OneToOne
+    @OneToOne(mappedBy = "administrator")
     private ProjectsEntity projectsEntity;
 
     public Integer getUserId() {

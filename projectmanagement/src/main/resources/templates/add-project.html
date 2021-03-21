@@ -16,10 +16,16 @@
             <td><label>Description:</label></td>
             <td><input type="text" th:field="*{description}" /></td>
         </tr>
-<!--        <tr>-->
-<!--            <td><label>Administrator:</label></td>-->
-<!--            <td><input type="text" th:field="*{administrator}" /></td>-->
-<!--        </tr>-->
+        <tr>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect2">Administrator</label>
+            </div>
+            <select id="inputGroupSelect2" class="custom-select" th:field="${newProject.administrator.userId}">
+                <option th:each="user : ${users}" th:value="${user.userId}" th:text="${user.displayedName}"></option>
+            </select>
+        </div>
+        </tr>
         <tr>
             <td><input type="submit" value="Submit" /></td>
         </tr>

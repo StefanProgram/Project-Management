@@ -1,6 +1,7 @@
 package com.sda.projectmanagement.controllers;
 
 import com.sda.projectmanagement.persistence.UsersEntity;
+import com.sda.projectmanagement.service.ProjectService;
 import com.sda.projectmanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
