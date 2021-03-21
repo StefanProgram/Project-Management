@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SprintService {
@@ -27,7 +28,13 @@ public class SprintService {
 
     public void editSprint(SprintEntity editedSprint) { sprintRepository.save(editedSprint);}
 
-    public void deleteSprint(SprintEntity sprintEntity){
-        sprintRepository.deleteById(sprintEntity.getId());
+    public void deleteSprint(Integer id){
+        sprintRepository.deleteById(id);
     }
+    public SprintEntity getSprint(Integer id) {
+        Optional<SprintEntity> sprintEntityOptional = sprintRepository.findById(id);
+        SprintEntity sprintEntity = sprintEntityOptional.get();
+        return sprintEntity;
+    }
+
 }

@@ -1,11 +1,13 @@
 package com.sda.projectmanagement.service;
 
+import com.sda.projectmanagement.persistence.SprintEntity;
 import com.sda.projectmanagement.persistence.TaskEntity;
 import com.sda.projectmanagement.repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TaskService {
@@ -25,8 +27,14 @@ public class TaskService {
 
     public void editTask(TaskEntity editedTask) { taskRepository.save(editedTask); }
 
-    public void deleteTask(TaskEntity taskEntity){
-        taskRepository.deleteById(taskEntity.getId());
+    public void deleteTask(Integer id){
+        taskRepository.deleteById(id);
     }
+    public TaskEntity getTask(Integer id) {
+        Optional<TaskEntity> taskEntityOptional = taskRepository.findById(id);
+        TaskEntity taskEntity = taskEntityOptional.get();
+        return taskEntity;
+    }
+
 
 }

@@ -8,7 +8,15 @@
 <body>
 
 <li th:each="t: ${task}">
+    <p th:text="${task.Id}"/>
     <p th:text="${task.name}"/>
+    <p th:text="${task.description}"/>
+    <p th:text="${task.sprint}"/>
+    <p th:text="${task.weight}"/>
+    <p th:text="${task.storyPoints}"/>
+    <p th:text="${task.inProgress}"/>
+    <p th:text="${task.assignedPerson}"/>
+
 </li>
 
 </body>

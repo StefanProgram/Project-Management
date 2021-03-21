@@ -23,27 +23,27 @@ public class SprintEntity {
         Id = id;
     }
 
-    public Date getDatefrom() {
+    public Date getDateFrom() {
         return dateFrom;
     }
 
-    public void setDatefrom(Date datefrom) {
-        this.dateFrom = datefrom;
+    public void setDateFrom(Date dateFrom) {
+        this.dateFrom = dateFrom;
     }
 
-    public Date getDateto() {
+    public Date getDateTo() {
         return dateTo;
     }
 
-    public void setDateto(Date dateto) {
-        this.dateTo = dateto;
+    public void setDateTo(Date dateTo) {
+        this.dateTo = dateTo;
     }
 
-    public Integer getPlannedstorypoints() {
+    public Integer getPlannedStoryPoints() {
         return plannedStoryPoints;
     }
 
-    public void setPlannedstorypoints(Integer plannedstorypoints) {
-        this.plannedStoryPoints = plannedstorypoints;
+    public void setPlannedStoryPoints(Integer plannedStoryPoints) {
+        this.plannedStoryPoints = plannedStoryPoints;
     }
 }
