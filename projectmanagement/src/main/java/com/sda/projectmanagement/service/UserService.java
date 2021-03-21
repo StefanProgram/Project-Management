@@ -39,8 +39,9 @@ public class UserService {
     public void deleteUser(Integer id) {
         userRepository.deleteById(id);
     }
+
     public UsersEntity getUser(Integer id) {
-        Optional<UsersEntity> usersEntityOptional =  userRepository.findById(id);
+        Optional<UsersEntity> usersEntityOptional = userRepository.findById(id);
         UsersEntity usersEntity = usersEntityOptional.get();
         return usersEntity;
     }

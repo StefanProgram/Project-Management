@@ -25,21 +25,19 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 -->
 <div class="container">
-    <a th:href="@{/getParticipation}">
+    <a th:href="@{/add-participation}">
         <button type="button" class="btn btn-primary">Assign Project</button>
     </a>
     <h1>Participations</h1>
     <li th:each="participation: ${participations}">
         <p th:text="'Project name : ' + ${participation.projectsEntity.name}"/>
-    <li th:each="participation: ${participations}">
         <p th:text="'Participating users : ' + ${participation.usersEntity.displayedName}"/>
-    </li>
-    <a th:href="@{/edit-participation/{id}(id = ${participation.participationId})}">
-        <button type="button" class="btn btn-primary">Edit</button>
-    </a>
-    <a th:href="@{/delete-participation/{id}(id = ${participation.participationId})}">
-        <button type="button" class="btn btn-primary">Delete</button>
-    </a>
+        <a th:href="@{/edit-participation/{id}(id = ${participation.participationId})}">
+            <button type="button" class="btn btn-primary">Edit</button>
+        </a>
+        <a th:href="@{/delete-participation/{id}(id = ${participation.participationId})}">
+            <button type="button" class="btn btn-primary">Delete</button>
+        </a>
     </li>
 </div>
 </body>
