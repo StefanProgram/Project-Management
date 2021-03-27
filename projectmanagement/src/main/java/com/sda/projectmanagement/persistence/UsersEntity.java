@@ -12,6 +12,7 @@ public class UsersEntity {
     private String password;
     private String email;
     private String displayedName;
+    private Integer avatar;
 
     @OneToOne(mappedBy = "administrator")
     private ProjectsEntity projectsEntity;
@@ -44,6 +45,14 @@ public class UsersEntity {
         return email;
     }
 
+    public Integer getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Integer avatar) {
+        this.avatar = avatar;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -72,6 +81,7 @@ public class UsersEntity {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", displayedName='" + displayedName + '\'' +
+                ", avatar=" + avatar +
                 ", projectsEntity=" + projectsEntity +
                 '}';
     }

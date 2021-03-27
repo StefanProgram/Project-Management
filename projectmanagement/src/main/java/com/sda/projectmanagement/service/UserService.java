@@ -45,4 +45,9 @@ public class UserService {
         UsersEntity usersEntity = usersEntityOptional.get();
         return usersEntity;
     }
+    public UsersEntity getUserByEmail(String email) {
+        UsersEntity usersEntity = userRepository.findByEmail(email);
+        return usersEntity;
+    }
+
 }

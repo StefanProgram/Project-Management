@@ -19,10 +19,24 @@ public class UserController {
     private UserService userService;
 
     @GetMapping(path = "/getUsers")
-    public String getUsers(Model model) {
+    public String getUsers(Model model, String email) {
         List<UsersEntity> userList = userService.getAllUsers();
         model.addAttribute("users", userList);
+        UsersEntity usersEntity = userService.getUserByEmail(email);
+        model.addAttribute("userToBeInvited", new UsersEntity());
         return "users";
+    }
+//    @GetMapping(path = "/user-search")
+//    public String getUserByEmail(Model model, String email) {
+//        UsersEntity usersEntity = userService.getUserByEmail(email);
+//        model.addAttribute("userToBeInvited", new UsersEntity());
+//        return "user-search";
+//    }
+    @GetMapping(path = "user-search/{email}")
+    public String getUser(Model model, @PathVariable("email") String email) {
+        UsersEntity usersEntity = userService.getUserByEmail(email);
+        model.addAttribute("userToBeInvited", new UsersEntity());
+        return "user-invite";
     }
 
     @GetMapping(path = "add-user")
