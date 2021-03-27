@@ -26,7 +26,8 @@ public class UserController {
         model.addAttribute("userToBeInvited", new UsersEntity());
         return "users";
     }
-//    @GetMapping(path = "/user-search")
+
+    //    @GetMapping(path = "/user-search")
 //    public String getUserByEmail(Model model, String email) {
 //        UsersEntity usersEntity = userService.getUserByEmail(email);
 //        model.addAttribute("userToBeInvited", new UsersEntity());
@@ -37,6 +38,23 @@ public class UserController {
         UsersEntity usersEntity = userService.getUserByEmail(email);
         model.addAttribute("userToBeInvited", new UsersEntity());
         return "user-invite";
+    }
+
+    @GetMapping(path = "/register")
+    public String getRegisterPage(Model model) {
+        model.addAttribute("user", new UsersEntity());
+        return "register";
+    }
+
+    @PostMapping(path = "/register/add")
+    public String register(@ModelAttribute UsersEntity user) {
+        userService.register(user);
+        return "redirect:/login-form";
+    }
+
+    @GetMapping(path = "/login-form")
+    public String getLoginPage() {
+        return "login-form";
     }
 
     @GetMapping(path = "add-user")
@@ -50,23 +68,25 @@ public class UserController {
         userService.addUser(newUser);
         return "redirect:/getUsers";
     }
+
     @GetMapping(path = "edit-user/{id}")
-    public String editUserPage(Model model, @PathVariable("id") Integer id){
+    public String editUserPage(Model model, @PathVariable("id") Integer id) {
         UsersEntity usersEntity = userService.getUser(id);
         model.addAttribute("userToBeEdited", usersEntity);
         return "edit-user";
     }
 
     @PostMapping(path = "user/edit")
-    public String editUser(@ModelAttribute UsersEntity userToBeEdited){
+    public String editUser(@ModelAttribute UsersEntity userToBeEdited) {
         userService.editUser(userToBeEdited);
         return "redirect:/getUsers";
     }
 
     @GetMapping(path = "delete-user/{id}")
-    public String deleteUser(Model model, @PathVariable("id") Integer id){
+    public String deleteUser(Model model, @PathVariable("id") Integer id) {
         userService.deleteUser(id);
         return "redirect:/getUsers";
     }
+
 
 }

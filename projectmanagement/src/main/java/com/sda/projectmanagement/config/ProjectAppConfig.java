@@ -12,4 +12,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("com.sda.projectmanagement.repositories")
 @Import({WebSecurityConfig.class})
 public class ProjectAppConfig {
+
 }

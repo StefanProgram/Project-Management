@@ -13,6 +13,7 @@ public class UsersEntity {
     private String email;
     private String displayedName;
     private Integer avatar;
+    private String role;
 
     @OneToOne(mappedBy = "administrator")
     private ProjectsEntity projectsEntity;
@@ -27,6 +28,14 @@ public class UsersEntity {
 
     public String getLogin() {
         return login;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public void setLogin(String login) {
@@ -82,6 +91,7 @@ public class UsersEntity {
                 ", email='" + email + '\'' +
                 ", displayedName='" + displayedName + '\'' +
                 ", avatar=" + avatar +
+                ", role='" + role + '\'' +
                 ", projectsEntity=" + projectsEntity +
                 '}';
     }
