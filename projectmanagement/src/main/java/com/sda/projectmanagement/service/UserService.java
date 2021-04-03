@@ -78,9 +78,14 @@ public class UserService implements UserDetailsService {
 
     public void register(UsersEntity user) {
         user.setRole("ROLE_USER");
-        String password=user.getPassword();
-        String encodedPassword=passwordEncoder.encode(password);
+        String password = user.getPassword();
+        String encodedPassword = passwordEncoder.encode(password);
         user.setPassword(encodedPassword);
         userRepository.save(user);
+    }
+
+    public UsersEntity getUserByUsername(String login) {
+        Optional<UsersEntity> userOptional = userRepository.findByLogin(login);
+        return userOptional.get();
     }
 }

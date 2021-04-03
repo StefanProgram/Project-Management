@@ -23,6 +23,22 @@ public class ParticipationInProjectEntity {
         this.participationId = participationId;
     }
 
+    public ProjectsEntity getProjectsEntity() {
+        return projectsEntity;
+    }
+
+    public void setProjectsEntity(ProjectsEntity projectsEntity) {
+        this.projectsEntity = projectsEntity;
+    }
+
+    public UsersEntity getUsersEntity() {
+        return usersEntity;
+    }
+
+    public void setUsersEntity(UsersEntity usersEntity) {
+        this.usersEntity = usersEntity;
+    }
+
     public ProjectsEntity getProjectEntity() {
         return projectsEntity;
     }
@@ -39,12 +55,4 @@ public class ParticipationInProjectEntity {
         this.usersEntity = usersEntity;
     }
 
-    @Override
-    public String toString() {
-        return "ParticipationInProjectEntity{" +
-                "participationId=" + participationId +
-                ", projectEntity=" + projectsEntity +
-                ", userEntity=" + usersEntity +
-                '}';
-    }
 }

@@ -32,14 +32,14 @@
     <li th:each="project: ${projects}">
         <p th:text="'Project:' + ${project.name}"/>
         <p th:text="'Description: ' + ${project.description}"/>
-        <p th:text="'Administrator: ' + ${project.administrator}"/>
+        <p th:text="'Administrator: ' + ${project.administrator.displayedName}"/>
         <a th:href="@{/edit-project/{id}(id = ${project.projectId})}">
             <button type="button" class="btn btn-primary">Edit</button>
         </a>
         <a th:href="@{/delete-project/{id}(id = ${project.projectId})}">
             <button type="button" class="btn btn-primary">Delete</button>
         </a>
-    </li>
+
 </div>
 </body>
 </html>

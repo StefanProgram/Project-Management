@@ -82,17 +82,4 @@ public class UsersEntity {
         this.projectsEntity = projectsEntity;
     }
 
-    @Override
-    public String toString() {
-        return "UsersEntity{" +
-                "userId=" + userId +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", displayedName='" + displayedName + '\'' +
-                ", avatar=" + avatar +
-                ", role='" + role + '\'' +
-                ", projectsEntity=" + projectsEntity +
-                '}';
-    }
 }

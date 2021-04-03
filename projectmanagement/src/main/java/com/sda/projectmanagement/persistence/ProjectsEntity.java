@@ -47,13 +47,4 @@ public class ProjectsEntity {
         this.administrator = administrator;
     }
 
-    @Override
-    public String toString() {
-        return "ProjectsEntity{" +
-                "projectId=" + projectId +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", administrator=" + administrator +
-                '}';
-    }
 }

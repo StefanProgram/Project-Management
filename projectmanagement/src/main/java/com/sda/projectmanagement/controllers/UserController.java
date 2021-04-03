@@ -33,12 +33,12 @@ public class UserController {
 //        model.addAttribute("userToBeInvited", new UsersEntity());
 //        return "user-search";
 //    }
-    @GetMapping(path = "user-search/{email}")
-    public String getUser(Model model, @PathVariable("email") String email) {
-        UsersEntity usersEntity = userService.getUserByEmail(email);
-        model.addAttribute("userToBeInvited", new UsersEntity());
-        return "user-invite";
-    }
+//    @GetMapping(path = "user-search/{email}")
+//    public String getUser(Model model, @PathVariable("email") String email) {
+//        UsersEntity usersEntity = userService.getUserByEmail(email);
+//        model.addAttribute("userToBeInvited", new UsersEntity());
+//        return "user-invite";
+//    }
 
     @GetMapping(path = "/register")
     public String getRegisterPage(Model model) {

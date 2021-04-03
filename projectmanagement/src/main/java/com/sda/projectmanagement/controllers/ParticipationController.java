@@ -31,8 +31,11 @@ public class ParticipationController {
         model.addAttribute("participations", participationList);
         return "participations";
     }
+
     @GetMapping(path = "add-participation")
     public String addParticipation(Model model) {
+//        ParticipationInProjectEntity newParticipation = new ParticipationInProjectEntity();
+//        newParticipation =
         model.addAttribute("newParticipation", new ParticipationInProjectEntity());
         List<UsersEntity> usersEntity = userService.getAllUsers();
         model.addAttribute("users", usersEntity);
@@ -40,6 +43,7 @@ public class ParticipationController {
         model.addAttribute("projects", projectsEntity);
         return "add-participation";
     }
+
     @PostMapping(path = "participation/add")
     public String addParticipation(@ModelAttribute ParticipationInProjectEntity newParticipation) {
         participationService.addParticipation(newParticipation);
