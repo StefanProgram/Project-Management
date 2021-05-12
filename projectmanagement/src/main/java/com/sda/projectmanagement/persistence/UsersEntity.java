@@ -8,9 +8,11 @@ public class UsersEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
+    @Column(length = 15)
     private String login;
     private String password;
     private String email;
+    @Column(length = 20)
     private String displayedName;
     private Integer avatar;
     private String role;

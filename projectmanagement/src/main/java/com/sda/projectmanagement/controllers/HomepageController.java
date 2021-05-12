@@ -19,6 +19,6 @@ public class HomepageController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String login = authentication.getName();
         UsersEntity usersEntity = userService.getUserByUsername(login);
-        return "projects";
+        return "start-page";
     }
 }

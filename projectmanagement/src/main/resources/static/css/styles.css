@@ -1,3 +1,10 @@
-#body {
-    background-color: green;
+.body {
+    background-color: yellowgreen;
+}
+
+#hello {
+
+    position: relative;
+    top: 40px;
+    left: 240px;
 }

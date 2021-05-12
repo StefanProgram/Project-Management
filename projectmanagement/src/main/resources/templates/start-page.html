@@ -1,11 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style>
+        .row {
+            position: relative;
+            left: 120px;
+        }
+    </style>
 </head>
-<body>
-
-
+<body class="body">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+<div id="hello" class="h3" sec:authorize="isAuthenticated()">
+    Hello, <span sec:authentication="name">
+</span>
+</div>
+<br><br><br><br>
+<div class="row">
+    <div class="col-sm-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">List of Users</h5>
+                <p class="card-text">Wiew all registered users. Invite people to register</p>
+                <a href="/getUsers" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Projects</h5>
+                <p class="card-text">A list of both ongoing and past projects. Create your own project as
+                    administrator.</p>
+                <a href="/getProjects" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="row">
+    <div class="col-sm-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Participation in the project</h5>
+                <p class="card-text">See which projects each user is currently assigned to or add participation.</p>
+                <a href="/getParticipation" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Sprint</h5>
+                <p class="card-text">View past sprints and related tasks.</p>
+                <a href="#" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+<a class="nav-link" tabindex="-1" aria-disabled="true" th:href="@{/logout}">Logout</a>
 </body>
 </html>

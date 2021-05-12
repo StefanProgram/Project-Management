@@ -88,4 +88,5 @@ public class UserService implements UserDetailsService {
         Optional<UsersEntity> userOptional = userRepository.findByLogin(login);
         return userOptional.get();
     }
+
 }

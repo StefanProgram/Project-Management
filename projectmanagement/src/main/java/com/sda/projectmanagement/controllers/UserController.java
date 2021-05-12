@@ -27,19 +27,6 @@ public class UserController {
         return "users";
     }
 
-    //    @GetMapping(path = "/user-search")
-//    public String getUserByEmail(Model model, String email) {
-//        UsersEntity usersEntity = userService.getUserByEmail(email);
-//        model.addAttribute("userToBeInvited", new UsersEntity());
-//        return "user-search";
-//    }
-//    @GetMapping(path = "user-search/{email}")
-//    public String getUser(Model model, @PathVariable("email") String email) {
-//        UsersEntity usersEntity = userService.getUserByEmail(email);
-//        model.addAttribute("userToBeInvited", new UsersEntity());
-//        return "user-invite";
-//    }
-
     @GetMapping(path = "/register")
     public String getRegisterPage(Model model) {
         model.addAttribute("user", new UsersEntity());

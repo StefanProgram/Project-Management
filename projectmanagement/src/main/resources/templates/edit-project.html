@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"><head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
     <meta charset="UTF-8">
     <title>Edit Project</title>
 </head>
@@ -10,28 +11,30 @@
         <tr>
             <td><label> Id</label>
             </td>
-            <td ><input readonly type="text" th:field="*{projectId}" /></td>
+            <td><input readonly type="text" th:field="*{projectId}"/></td>
         </tr>
         <tr>
             <td><label> Name</label></td>
-            <td><input type="text" th:field="*{name}" /></td>
+            <td><input type="text" th:field="*{name}"/></td>
         </tr>
         <tr>
             <td><label>Description:</label></td>
-            <td><input type="text" th:field="*{description}" /></td>
+            <td><input type="text" th:field="*{description}"/></td>
         </tr>
         <tr>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect2">Administrator</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect2">Administrator</label>
+                </div>
+                <select id="inputGroupSelect2" class="custom-select"
+                        th:field="${projectToBeEdited.administrator.userId}">
+                    <option th:each="user : ${users}" th:value="${user.userId}"
+                            th:text="${user.displayedName}"></option>
+                </select>
             </div>
-            <select id="inputGroupSelect2" class="custom-select" th:field="${projectToBeEdited.administrator.userId}">
-                <option th:each="user : ${users}" th:value="${user.userId}" th:text="${user.displayedName}"></option>
-            </select>
-        </div>
         </tr>
         <tr>
-            <td><input type="submit" value="Edit" /></td>
+            <td><input type="submit" value="Edit"/></td>
         </tr>
     </table>
 </form>
